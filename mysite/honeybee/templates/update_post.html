@@ -1,0 +1,20 @@
+{%extends 'base.html'%}
+{%block content%}
+<h1>Edit Blog post</h1>
+<br/>
+ {%if user.is_authenticated%}
+     <div class="form-group">
+            <form method="POST">
+            {%csrf_token%}
+            {{form.as_p}}
+           <button class="alert alert-secondary">Post</button>
+            </form>
+     </div>
+ {%else%}
+Please login to make changes!
+{%endif%}
+
+</form>
+
+
+{%endblock%}
